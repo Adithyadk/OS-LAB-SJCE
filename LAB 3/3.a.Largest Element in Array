@@ -1,0 +1,28 @@
+#!/bin/bash
+# Read in the number of elements in the array
+echo "Enter the number of elements in the array: "
+read n
+
+# Initialize an empty array
+array=()
+
+# Read in the elements of the array
+echo "Enter the elements of the array: "
+for (( i=0; i<$n; i++ ))
+do
+    read element
+    array+=($element)
+done
+
+# Find the largest element in the array
+largest=${array[0]}
+for (( i=1; i<$n; i++ ))
+do
+    if [[ ${array[i]} -gt $largest ]]
+    then
+        largest=${array[i]}
+    fi
+done
+
+# Print the largest element
+echo "The largest element in the array is: $largest"
