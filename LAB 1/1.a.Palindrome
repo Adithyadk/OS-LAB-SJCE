@@ -1,0 +1,22 @@
+#To check if given number is a Palindrome
+#!\bin\bash
+
+echo "Enter a number:"
+read n1
+
+length=$n1
+
+for((i=$length-1;i>=0;i--))
+do
+rev=$rev${n1:$i:1}
+done
+
+echo "The Reverse of the string is:"
+echo "$rev"
+
+if [ $n1 == $rev ]
+then
+echo "$n1 is a Palindrome"
+else
+echo "$n1 is not a Palindrome"
+fi
